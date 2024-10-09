@@ -13,15 +13,18 @@ Diese Webanwendung wurde im Rahmen der Bachelorarbeit "Entwurf und Implementieru
 
 ## Installation
 - **Repository klonen**:
-    git clone https://github.com/cyberlytics/reforge
+    git clone https://github.com/cyberlytics/reforge  
     cd reforge
+- **Abhängigkeiten installieren**:  
+    im backend & frontend ordner: npm install
 - **.env-Datei konfigurieren**:
-    OPENAI_API_KEY=dein-openai-api-schluessel
+    .env-Datei im backend ordner erstellen mit folgenden keys:  
+    OPENAI_API_KEY=dein-openai-api-schluessel  
     DEEPL_API_KEY=dein-deepl-api-schluessel
 - **Anwendung starten**:
     im backend & im frontend: npm start
 
 ## Autor
-Autor: Stricker Natalie
+Autor: Stricker Natalie  
 Betreuer: Prof. Dr.-Ing. Christoph P. Neumann
 
