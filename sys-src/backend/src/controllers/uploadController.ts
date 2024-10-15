@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import multer from 'multer';
 import { processZipFile, processDocxFile } from '../services/fileProcessingService';
+import { removeSpecialChars } from '../services/textCleaningService';
 import { AlignmentType, Document, Packer, Paragraph, HeadingLevel, TextRun } from 'docx';
 
 const storage = multer.memoryStorage();
@@ -66,6 +67,20 @@ export const handleFileUpload = (req: Request, res: Response) => {
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
+    //Manuelles Literaturverzeichnis
+    let bibliography = '';
+    if(language == 'english'){
+      bibliography = `\n\n\\section{Bibliography}\n` +
+        `This report was generated from the uploaded file using OpenAI.\n` +
+        `All sources must be added manually before publication.\n` +
+        `Name of the file: ${req.file.originalname}`;
+    } else {
+      bibliography = `\n\n\\section{Literaturverzeichnis}\n` +
+        `Dieser Bericht wurde aus der hochgeladenen Datei mit OpenAI generiert.\n` +
+        `Alle Quellen müssen vor einer Veröffentlichung noch manuell ergänzt werden.\n` +
+        `Name der Datei: ${req.file.originalname}`;
+    }
+
     try {
       let combinedReport = '';
 
@@ -95,14 +110,19 @@ export const handleFileUpload = (req: Request, res: Response) => {
           `\\begin{document}\n` +
           `\\maketitle\n`;
         let latexFooter = `\n\\end{document}`;
-
-        combinedReport = latexHeader + combinedReport + latexFooter;
+        //Literaturverzeichnis hinzufügen
+        combinedReport = latexHeader + combinedReport + bibliography + latexFooter;
+        combinedReport = removeSpecialChars(combinedReport);
 
         res.setHeader('Content-Disposition', `attachment; filename="${title}.tex"`);
         res.setHeader('Content-Type', 'text/plain');
         res.status(200).send(combinedReport);
 
       } else if (format === 'docx') {
+        //Literaturverzeichnis hinzufügen
+        combinedReport = combinedReport + bibliography;
+        combinedReport = removeSpecialChars(combinedReport);
+
         //report in docx umwandeln
         const docxReport = await PutDocxStyle(title, author, combinedReport);
         res.setHeader('Content-Disposition', `attachment; filename="${title}.docx"`);
