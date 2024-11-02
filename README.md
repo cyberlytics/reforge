@@ -15,10 +15,15 @@ Diese Webanwendung wurde im Rahmen der Bachelorarbeit "Entwurf und Implementieru
 - **Repository klonen**:
     git clone https://github.com/cyberlytics/reforge  
     cd reforge
-- **Abhängigkeiten installieren**:  
-    im backend & frontend ordner: npm install
+- **Abhängigkeiten installieren**:
+    im root ordner : npm install 
+    im sys-src\backend & sys-src\frontend ordner: npm install
+- **Node version**:  
+    genutzte Version: v20.14.0
 - **.env-Datei konfigurieren**:
-    .env-Datei im backend ordner erstellen mit folgenden keys:  
+    .env-example im sys-src\backend ordner finden und umbennen zu:  .env  
+    
+    Platzhalter durch keys ersetzten:  
     OPENAI_API_KEY=dein-openai-api-schluessel  
     DEEPL_API_KEY=dein-deepl-api-schluessel
 - **Anwendung starten**:

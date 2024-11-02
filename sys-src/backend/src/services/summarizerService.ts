@@ -12,22 +12,10 @@ export const generateTechReport = async (
   docType: string,
 ): Promise<string> => {
   try {
-    let prompt: string;
-
-    if (docType === 'tex') {
-      prompt = `
-        Fasse das kurz in ${language} zusammen:
-        ${content}
-      `;
-    } else if (docType === 'docx') {
-      prompt = `
-        Fasse das kurz in ${language} zusammen:
-        ${content}
-      `;
-          
-    } else {
-      throw new Error('Unsupported format. Please use either "latex" or "docx".');
-    }
+    let prompt = `
+      Fasse das kurz in ${language} zusammen:
+      ${content}
+    `;
 
     const response = await limiter.schedule(() => axios.post(
       'https://api.openai.com/v1/chat/completions',
