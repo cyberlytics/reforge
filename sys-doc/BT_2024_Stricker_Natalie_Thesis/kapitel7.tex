@@ -1,0 +1,45 @@
+\chapter{Projektausblick von Reforge}
+\label{ch:ausblick}
+In diesem Kapitel werden mögliche Erweiterungen und Verbesserungen für \textit{Reforge} vorgestellt.
+
+
+\section{Verbesserung der Textbereinigungen}
+Ein wichtiger Aspekt bei der Bearbeitung von LaTeX-Dokumenten ist die Textbereinigung. Der derzeitige Ansatz filtert bestimmte Teile der LaTeX-Dateien heraus, um nur den wesentlichen Inhalt zu erhalten. Dies ist notwendig, um die Anzahl der Token für die nachfolgenden Verarbeitungsschritte nicht zu groß werden zu lassen. Allerdings werden dabei auch Codeabschnitte und andere potenziell wertvolle Inhalte herausgefiltert.
+
+In Zukunft könnte eine verbesserte Textbereinigung entwickelt werden, die in der Lage ist, Codeabschnitte in LaTeX korrekt zu erkennen und entsprechend zu behandeln. Damit wäre sichergestellt, dass diese Inhalte nicht verloren gehen und gegebenenfalls in die Zusammenfassung aufgenommen werden können. Insbesondere für wissenschaftliche Arbeiten, die viele mathematische Formeln oder programmiertechnische Elemente enthalten, wäre dies von Vorteil, da so die Zusammenhänge im Text besser erhalten bleiben.
+
+Darüber hinaus sollte die Textbereinigung flexibler gestaltet werden, so dass weitere, bisher ausgeschlossene Inhalte einbezogen werden können. Dies könnte zum Beispiel die Berücksichtigung von Kommentaren umfassen, die zwar derzeit als unwichtig erachtet werden, jedoch für die Interpretation des Textes von Bedeutung sein könnten.
+
+Die Verbesserung der Textbereinigung würde dazu beitragen, eine genauere und vollständigere Zusammenfassung des Originaldokuments zu erstellen. Dies würde auch die Qualität der Berichte verbessern.
+
+\section{Hinzufügen des Literaturverzeichnisses}
+Ein weiterer Bereich, der in Zukunft verbessert werden sollte, ist das Literaturverzeichnis. Momentan muss das Literaturverzeichnis manuell hinzugefügt werden, da es nicht automatisch in die generierte Ausgabe übernommen wird. In einer zukünftigen Version der Anwendung sollte das Literaturverzeichnis korrekt erkannt und in das Ausgabeformat integriert werden. Eine automatische Übernahme des Literaturverzeichnisses würde den Generierungsprozess für den Benutzer vereinfachen.
+
+\section{Hinzufügen einer Datenbank}
+\label{subsec:datenbank}
+
+Ein möglicher Ansatz zur Verbesserung wäre die Integration einer Datenbank zur Speicherung der Daten. Derzeit werden die Daten nur temporär verarbeitet und nicht dauerhaft gespeichert. Eine Datenbank würde die langfristige Speicherung von Dateien, Metadaten, Bearbeitungsstatus und Benutzerinformationen ermöglichen. Wie Saake et al. betonen, ermöglichen Datenbanksysteme nicht nur die effiziente Speicherung und den Zugriff auf große Datenmengen, sondern gewährleisten auch die Datenunabhängigkeit und die Kontrolle von Mehrbenutzerzugriffen \cite{saake2019datenbanken}. Darüber hinaus wird in ihrem Buch die Implementierung einer Datenbank detailliert beschrieben, welche als wertvolle Grundlage für die Realisierung dienen kann. 
+
+Außerdem hätte die Einführung einer Datenbank mehrere Vorteile. Zum einen könnte der Benutzer jederzeit auf frühere Berichte und Bearbeitungen zugreifen, was die Wiederverwendbarkeit der Ergebnisse begünstigt. Zum anderen könnte eine Datenbank die Verwaltung und Nachvollziehbarkeit der Benutzeraktionen unterstützen, dies wäre insbesondere bei einer größeren Anzahl von Benutzern wichtig. Die Wahl der Datenbanktechnologie wie MongoDB, SQL oder NoSQL würde von den spezifischen Anforderungen des Projekts abhängen.
+
+Die Entwicklung eines konzeptionellen Datenmodells kann ebenfalls Gegenstand künftiger Arbeiten sein. Die Planung eines Informatikprojekts sollte gemäß Vetter systematisch von einer groben zur detaillierten Beschreibung erfolgen. Dabei ist es entscheidend, zunächst eine abstrakte Übersicht des Systems zu erstellen, bevor man sich den spezifischen Details widmet. Ein konzeptionelles Datenmodell bildet dabei die Grundlage für diese Vorgehensweise, da es eine klare Struktur und Orientierung bietet. \cite[S.15 ff.]{vetter2013aufbau}
+
+\section{Berücksichtigung von Bildern}
+
+Ein weiterer Schritt zur Verbesserung der Anwendung könnte die Berücksichtigung von Bildern bei der Verarbeitung sein. Derzeit werden Diagramme, Abbildungen und andere visuelle Inhalte, die oft wichtige Informationen enthalten, herausgefiltert und fehlen somit in der generierten Ausgabe. Dies ist insbesondere für wissenschaftliche Arbeiten von Bedeutung, die häufig auf visuelle Darstellungen zur Veranschaulichung von komplexen Zusammenhängen angewiesen sind.
+
+\section{Erweiterung der Parameter im Frontend}
+
+Eine weitere Verbesserung könnte darin bestehen, dem Frontend mehr Parameter hinzuzufügen, um die Flexibilität der Benutzeroberfläche zu erhöhen. Beispielsweise könnte der Benutzer angeben, welche spezifischen Abschnitte des Dokuments in den Bericht aufgenommen werden sollen. Auf diese Weise könnte der Benutzer den technischen Bericht besser an seine Bedürfnisse anpassen, indem er zum Beispiel nur bestimmte Abschnitte wie die Einleitung, das Fazit oder ausgewählte Kapitel einbezieht. Diese Erweiterung würde dem Benutzer mehr Kontrolle über die generierten Berichte geben.
+
+\section{Asynchrone Verarbeitungen und Benachrichtigungen}
+
+Eine sinnvolle Erweiterung der Anwendung wäre die Option, den fertig generierten Bericht per E-Mail an den Benutzer zu senden. Diese Funktionalität würde es den Nutzern ermöglichen, die Webseite zu verlassen, anstatt auf die Fertigstellung des Berichts zu warten. Besonders bei längeren Verarbeitungszeiten könnte dies die Benutzererfahrung verbessern, da der fertige Bericht automatisch zugestellt wird, sobald die Generierung abgeschlossen ist. 
+
+Eine weitere Möglichkeit der asynchronen Verarbeitung wäre im Kontext einer Datenbank. In diesem Fall könnten die generierten Berichte für jeden Benutzer auf dem Benutzerkonto in der Datenbank gespeichert werden. Auf diese Weise muss der Benutzer auch nicht auf seinen Bericht warten, sondern kann den generierten Bericht später einfach in seinem Account abrufen.
+
+\section{Kostenlimitierung}
+
+Wenn die Anwendung öffentlich zugänglich gemacht wird, sollte im Backend eine Beschränkung implementiert werden, um die Nutzung zu kontrollieren. Diese Beschränkung soll verhindern, dass Nutzer unbegrenzt Dokumente generieren, da dies die Kosten für den Betreiber der Website erheblich erhöhen könnte. Eine solche Maßnahme ist wichtig, damit die Betriebskosten überschaubar bleiben und die Anwendung langfristig nachhaltig betrieben werden kann. 
+
+Eine Möglichkeit wäre, die Anzahl der Berichte, die pro Tag erstellt werden können, auf zwei zu begrenzen. Wenn der Benutzer jedoch mehr als zwei Berichte erstellen möchte, könnte eine Art Kreditsystem eingeführt werden. Mit diesem System könnte der Benutzer mehr Versuche für die Generierung erwerben. Dieses Kreditsystem wird beispielsweise auf Fotor.com verwendet, einer Website für die Erstellung von \ac{KI}-Bildern. Die Abbildung \ref{fig:Fotor_Credits} im Anhang zeigt, wie die Option zum Kauf von Credits auf dieser Webseite aussieht. Darüber hinaus bietet Fotor die Alternative, täglich Credits zu erhalten, so dass der Kauf von Credits nicht zwingend erforderlich ist \cite{fotor}. Ein ähnliches System könnte für \textit{Reforge} durchaus sinnvoll sein, um die Kosten überschaubar zu halten und eventuell einen kleinen Gewinn zu erzielen.

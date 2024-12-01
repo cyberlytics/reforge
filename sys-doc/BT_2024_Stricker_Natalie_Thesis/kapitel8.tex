@@ -1,0 +1,25 @@
+\chapter{Fazit}
+
+Im Fazit wird die Arbeit abschließend zusammengefasst und die Erreichung der zuvor definierten Ziele reflektiert.
+
+\section{Zusammenfassung der Arbeit}
+Im Rahmen dieser Bachelorarbeit wurde die Webanwendung \textit{Reforge} entwickelt und erfolgreich implementiert. Sie ist in der Lage, eingereichte Dokumente zusammenzufassen und in spezifischen Formaten wie IEEEtran oder dem OTH-Forschungsbericht zur Verfügung zu stellen. Besonderes Augenmerk wurde auf die Integration moderner \ac{LLM}s zur Textzusammenfassung und -generierung sowie auf die Unterstützung mehrsprachiger Ausgaben in Deutsch und Englisch gelegt.
+
+Die entwickelte Anwendung bietet Studierenden und Lehrenden eine Plattform zur effizienten Erstellung technischer Berichte. Die Implementierung umfasst sowohl die Verarbeitung von LaTeX-ZIP-Dateien als auch von \ac{DOCX}-Dokumenten. Zudem ermöglicht die Integration von \ac{API}s, wie OpenAI und DeepL, die Textzusammenfassung und Übersetzung.
+
+Die Ergebnisse der Arbeit zeigen, dass der Einsatz von \textit{Reforge} den Zeit- und Arbeitsaufwand reduzieren kann. Das Tool bietet daher eine sinnvolle Anwendungsmöglichkeit und wird dementsprechend als nützlich bewertet. Gleichzeitig wurden die Grenzen der Automatisierung aufgezeigt, wie die Abhängigkeit von Token-Limits und die Notwendigkeit menschlicher Validierung. Diese Arbeit leistet somit einen Beitrag auf dem Gebiet der webbasierten Textzusammenfassung und der Entwicklung von \ac{KI}-Werkzeugen für den akademischen Gebrauch.
+
+\section{Erreichung der Ziele}
+In diesem Abschnitt wird dargestellt, inwieweit die gesteckten Ziele und funktionalen Anforderungen des Projekts erreicht wurden. Dabei wird insbesondere auf die in Kapitel \ref{subs:funktionaleAnfoderungen} definierten Anforderungen eingegangen und überprüft, ob diese vollständig umgesetzt wurden. Im Kapitel \ref{kernfragen} wurden drei Kernfragen gestellt, auf die nun Bezug genommen wird. 
+
+Die für die Webanwendung \textit{Reforge} gewählte Architektur erfüllt alle Anforderungen an das System und ermöglicht die Erstellung von TechReports. In dieser Arbeit wurde gezeigt, wie ein \ac{LLM} zur automatischen Textzusammenfassung erfolgreich integriert werden kann. Außerdem wurde die Qualität der generierten Berichte untersucht. Diese entsprechen den Anforderungen und bieten eine Grundlage für manuell erstellte Berichte, sowohl hinsichtlich der Struktur als auch der inhaltlichen Genauigkeit.
+
+Alle in A1 und A2 definierten Anforderungen wurden erfüllt. Die Anwendung ist in der Lage, den gesamten Text der Dokumente zu erfassen und für die Generierung in Segmente zu zerlegen. Diese Segmente werden anschließend fehlerfrei wieder zusammengesetzt. Darüber hinaus funktioniert die Kommunikation mit der OpenAI \ac{API} Schnittstelle. Die generierten Berichte spiegeln zudem den Inhalt des Originaltextes wider.
+
+Die Anforderungen aus A3 \ac{DOCX}- und LaTeX-Output sind ebenfalls vollständig implementiert. Die generierten Berichte werden korrekt im Word- oder LaTeX-Format ausgegeben, wobei spezifische Vorlagen wie IEEEtran oder der OTH-Forschungsbericht berücksichtigt werden.
+
+Die in A4 Multi-lingual definierten Anforderungen werden ebenfalls erfüllt. Der Benutzer kann im Webinterface die gewünschte Sprache für den Bericht auswählen. Die Anwendung generiert den Bericht daraufhin entweder in Deutsch oder Englisch.  
+
+Alle übrigen Anforderungen der A5 sind ebenfalls in \textit{Reforge} berücksichtigt. Die Benutzeroberfläche verfügt über alle geforderten Elemente und ist funktionsfähig. Sowohl der aktuelle Fortschritt als auch Fehlermeldungen der Anwendung werden dem Benutzer angezeigt. Darüber hinaus wurde auch die Funktion zum Herunterladen von Berichten implementiert.
+
+Zusammenfassend kann festgestellt werden, dass alle gesteckten Ziele und definierten Anforderungen erreicht wurden. Die Anwendung ist nicht nur funktionsfähig, sondern ermöglicht auch die Zusammenfassung der Dokumente.

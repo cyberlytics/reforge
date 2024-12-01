@@ -18,6 +18,33 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
 
+% Für die Verwendung von Minted und Farben
+\usepackage{minted}      % Für Code-Syntax-Highlighting
+\usepackage{xcolor}      % Für Farben (z.B. für den Hintergrund)
+
+% Optionales Package für zusätzliche Funktionen für Verbatim
+\usepackage{fvextra}
+
+% Float und Caption Handling
+\usepackage{caption}
+\usepackage{float}
+
+% Definition von einer Hintergrundfarbe für Code
+\definecolor{base}{rgb}{0.95,0.95,0.92}
+
+% Einstellung für minted
+\setminted{linenos, frame=lines, fontsize=\footnotesize}
+
+% Notwendig für die Ausgabe mit minted
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{tikz}
+
+% Für die Verwendung von shell-escape zum Kompilieren von Minted-Code
+\usepackage{shellesc}
+
+\usepackage{acronym}            % Package für Abkürzungsverzeichnis
+
 \usepackage{parskip}			% Einstellungen fuer Absaetze: Abstand statt Einrueckung
 
 \usepackage[a4paper,			% Papierformat A4
@@ -66,7 +93,7 @@
             position=bottom]{caption}
 
 \usepackage{graphicx}							% Einbinden von Graphiken
-\usepackage[svgnames,cmyk,table,hyperref]{xcolor} 	% Verwendung von Farben
+%\usepackage[svgnames,cmyk,table,hyperref]{xcolor} 	% Verwendung von Farben
 \usepackage{tikz}								% Erstellen von Grafiken
 \usetikzlibrary{positioning,arrows,plotmarks} % TikZ-Bibliotheken
 %\usepackage{pgfplots}                           % Darstellung von Plots, Funktionen, Graphen usw.
@@ -87,22 +114,29 @@
 % 
 % Persoenliche Angaben
 % 
-\newcommand*{\IhrVorname}{Thomas}
-\newcommand*{\IhrNachname}{Mustermann}
-\newcommand*{\IhrStudiengang}{Elektro- und Informationstechnik}
+\newcommand*{\IhrVorname}{Natalie}
+\newcommand*{\IhrNachname}{Stricker}
+\newcommand*{\IhrStudiengang}{Medieninformatik}
 \newcommand*{\IhreArbeit}{Bachelorarbeit}
-\newcommand*{\IhrTitelDE}{\LaTeX\ im Griff}
-\newcommand*{\IhrTitelEN}{\LaTeX\ under control}
-\newcommand*{\IhrBearbeitungszeitraumVON}{1. Oktober 2013}
-\newcommand*{\IhrBearbeitungszeitraumBIS}{31. Januar 2014}
-\newcommand*{\IhrErstpruefer}{Prof. Dr. Axel Maier}
-\newcommand*{\IhrZweitpruefer}{Prof. Dr. Bruno Müller}
-\newcommand*{\IhreFirma}{Renner-Verlag, Musterstadt}
-\newcommand*{\IhrFirmenbetreuer}{Dr. Karl Schulze}
+\newcommand*{\IhrTitelDE}{Entwurf und Implementierung einer Webanwendung zur automatisierten Erstellung von TechReports für Abschlussarbeiten}
+\newcommand*{\IhrTitelEN}{Design and Implementation of a Web Application for Automated Generation of TechReports for Theses}
+\newcommand*{\IhrBearbeitungszeitraumVON}{05. Juli 2024}
+\newcommand*{\IhrBearbeitungszeitraumBIS}{04. Dezember 2024}
+\newcommand*{\IhrErstpruefer}{Prof. Dr.-Ing. Christoph P. Neumann}
+\newcommand*{\IhrZweitpruefer}{Prof. Dr. Dieter Meiler}
+\newcommand*{\IhreFirma}{OTH Amberg-Weiden}
+\newcommand*{\IhrFirmenbetreuer}{}
 \newcommand*{\IhreZusammenfassung}{%
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Die Verwendung von Large Language Models gewinnt zunehmend an Bedeutung, da im Internet mit großen Datenmengen gearbeitet werden muss. Diese Modelle helfen dem Benutzer, das Wesentliche herauszufiltern und somit Zeit zu sparen. Gerade im akademischen Bereich sehen sich Lehrende und Studierende mit einer wachsenden Menge an wissenschaftlichen Arbeiten konfrontiert, die gelesen und analysiert werden müssen. Diese Arbeit beschäftigt sich daher mit dem Entwurf und der Implementierung einer Webanwendung, die technische Berichte generiert. Dabei werden auch Formatierungen wie IEEEtran berücksichtigt.
+
+Das Ziel dieser Arbeit ist die Entwicklung eines webbasierten Berichtsgenerators namens Reforge, der in der Lage ist, eingereichte Abschlussarbeiten zu analysieren, zusammenzufassen und in spezifischen Formaten auszugeben. Die entwickelte Anwendung soll Studierenden und Lehrenden helfen, den Prozess der Erstellung von technischen Berichten zu automatisieren und zu vereinfachen. Es wird untersucht, welche Erkenntnisse aus der Entwicklung und dem Einsatz dieser Anwendung gewonnen werden können und ob der Einsatz eines solchen Generators sinnvoll ist. Der Fokus liegt dabei auf der Qualität der generierten Berichte und dem Design der Anwendung.
 }
-\newcommand*{\IhreSchluesselwoerter}{\LaTeX, Textsatz, Formeln, Graphiken}
+\newcommand*{\IhreZusammenfassungEN}{%
+The use of large language models is becoming increasingly important as large amounts of data have to be processed on the Internet. These models help the user to filter out the essentials and thus save time. Particularly in the academic field, teachers and students are confronted with a growing volume of scientific papers that need to be read and analysed. This thesis therefore deals with the design and implementation of a web application that generates technical reports. Formatting such as IEEEtran is also taken into account.
+
+The aim of this thesis is to develop a web-based report generator called Reforge, which is able to analyse, summarise and output submitted theses in specific formats. The developed application should help students and teachers to automate and simplify the process of creating technical reports. It will be analysed which insights can be gained from the development and use of this application and whether the use of such a generator makes sense. The focus is on the quality of the generated reports and the design of the application.
+}
+\newcommand*{\IhreSchluesselwoerter}{LLM, KI, React, TypeScript, Web-Entwicklung, API}
 
 
 \usepackage[bookmarks, raiselinks, pageanchor, % PDF-Einstellungen
@@ -161,21 +195,51 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   \clearpage
   \include{formblatt_selbststaendigkeitserklaerung}		% 3. Seite: Formblatt Bestaetigung nach Paragraph 12 APO
   \include{formblatt_summary}			% 4. Seite: Formblatt Zusammenfassung
+  \include{formblatt_abstract}
   \tableofcontents
   \newpage
-  \chapter*{Symbole, Formelzeichen und Einheiten}
+  
+   % Abkürzungsverzeichnis
+  \chapter*{Abk\"urzungsverzeichnis}
+  \begin{acronym}
+    \acro{KI}{Künstliche Intelligenz}
+    \acro{GPT}{Generative Pre-trained Transformer}
+    \acro{UML}{Unified Modelling Language}
+    \acro{LLM}{Large Language Model}
+    \acro{DOCX}{Office Open XML Document}
+    \acro{PDF}{Portable Document Format}
+    \acro{UA}{Universal Accessibility}
+    \acro{HTML}{Hypertext Markup Language}
+    \acro{HTTP}{Hypertext Transfer Protocol}
+    \acro{URI}{Uniform Resource Identifier}
+    \acro{URL}{Uniform Resource Locator}
+    \acro{UML}{Unified Modeling Language}
+    \acro{DOM}{Document Object Model}
+    \acro{API}{Application Programming Interface}
+    \acro{CORS}{Cross-Origin Resource Sharing}
+    \acro{Blob}{Binary Large Object}
+    \acro{SPA}{Single Page Application}
+    \acro{UI}{User Interface}
+  \end{acronym}
+
   \newpage
+  
   \pagenumbering{arabic}
   \include{kapitel1}
   \include{kapitel2}
+  \include{kapitel3}
+  \include{kapitel4}
+  \include{kapitel5}
+  \include{kapitel6}
+  \include{kapitel7}
+  \include{kapitel8}
   % ... weitere Kapitel
  
   % Literaturverzeichnis
   \phantomsection
   \addcontentsline{toc}{chapter}{Literaturverzeichnis}
-  \begin{thebibliography}{10}
-    \bibitem{quelle1} Schreiberling, Tim: ,,Bestseller-Buch'', 1.~Auflage, S.~13ff, Renner-Verlag, Musterstadt, 2011.
-  \end{thebibliography}
+  \bibliographystyle{apalike}
+  \bibliography{bibliography.bib}
   \newpage
   
   % Anhang
@@ -189,5 +253,5 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   \listoftables
   \newpage
   
-  %\include{anhang}
+  \include{anhang}
 \end{document}    

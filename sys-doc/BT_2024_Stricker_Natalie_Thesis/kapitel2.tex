@@ -1,65 +1,162 @@
-\chapter{Und irgendwo geht's weiter}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\chapter{Grundlagen}
+In diesem Kapitel werden die benötigten Grundlagen für diese Arbeit erläutert.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\section{Theoretische Grundlagen}
 
-\begin{align}
-  \sin(x+2\pi) &= \sin(x)\\
-  \cos(x+2\pi) &= \cos(x)\\
-  \cos(x) &= \sin\left(x+\frac{\pi}{2}\right)
-\end{align}
+\subsection{Large-Language-Model Grundlagen}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+In dieser Arbeit wollen wir den Prozess der Textgenerierung automatisieren. Dabei ist es notwendig zu verstehen, was ein \ac{LLM} ist und wie dieser funktioniert. Wie der Name bereits sagt, ist ein \ac{LLM} ein großes Sprachmodell, das Texte verstehen und generieren kann. Zu Beginn erhält ein \ac{LLM} eine Zufuhr umfangreicherer Textkörper wie Bücher, Artikel und Webseiten. Dabei muss es verschiedene Sprachaufgaben bearbeiten, um sich selbst zu trainieren. Auf diese Weise lernt es, wie Wörter, Ausdrücke und Sätze gebildet werden, damit sie ihren Zusammenhang und ihre Bedeutung nicht verlieren. Nach diesem Prozess ist das \ac{LLM} in der Lage, auf die Eingaben des Benutzers zu reagieren und ihm relevante Inhalte anzuzeigen, sofern diese in seinem Datensatz enthalten sind. \cite[S.1]{kumar2024ethics}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Das in dieser Arbeit verwendete \ac{LLM} stammt von OpenAI. OpenAI ist bekannt für seine \ac{GPT} und bietet Entwicklern mit einer \ac{API} die Möglichkeit, diese Modelle in ihre Anwendungen zu integrieren. Es gibt verschiedene \ac{GPT}-Modelle, die für die Integration ausgewählt werden können. Je nach gewähltem Modell können sowohl die erzielten Ergebnisse als auch die damit verbundenen Kosten unterschiedlich ausfallen. Die kleineren \ac{GPT} Modelle sind schneller und kostengünstiger als die größeren Modelle, jedoch sind die kleinen Modelle bei weitem nicht so genau wie die größeren Modelle. In dieser Arbeit wurde das \ac{GPT}-3.5-Turbo Modell verwendet, welches zu den größeren Modellen gehört. Dieses Modell besitzt die für eine Textzusammenfassung notwendige Performance und hat überschaubare Kosten. \cite{openai_quickstart}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\ac{GPT} Modelle arbeiten nicht mit Wörtern oder Zeichen als Texteinheiten, sondern mit Tokens, die Zeichen, Wortteile oder auch ganze Wörter sein können. Die \ac{API} Nutzungskosten werden auf der Basis von Tokens berechnet. Es gibt Input- und Output-Token, die jeweils unterschiedliche Kosten verursachen. \cite{openai_pricing}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-\section{Erster Abschnitt von Kapitel 2}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum (vgl. Tabelle~\ref{tab:beispiel}). Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Ein weiterer wichtiger Punkt bei der Verwendung der \ac{GPT} Modelle sind die Prompts. Bei einem Prompt handelt es sich um eine textuelle Aufforderung, die an einen \ac{LLM} übergeben wird, damit dieser weiß, wie es vorzugehen hat. Wie man einen Prompt am besten formuliert und worauf geachtet werden muss, ist Gegenstand des Prompt Engineerings. Es gibt verschiedene Möglichkeiten, die Ausgabe der \ac{LLM}s zu manipulieren. Wenn beispielsweise die generierte Ausgabe zu lang ist, kann das Modell im Prompt angewiesen werden, nur eine kurze Antwort zu geben. Auch andere Anweisungen wie Formatangaben oder Textkomplexität können im Prompt angegeben werden. Die Prompt-Entwicklung besitzt daher einen entscheidenden Einfluss auf die Ausgabe. \cite{openai_quickstart}
 
-\begin{table}
-  \centering
-  \begin{tabular}{l|c|r}
-	links & mittig & rechts\\\hline
-	a & b & c\\
-	1 & 2 & 3  
-  \end{tabular}
-  \caption{Eine Beispieltabelle, natürlich mit einer Erläuterung.}
-  \label{tab:beispiel}
+\subsection{Reguläre Ausdrücke}
+Eine weitere hilfreiche Technik für das Bearbeiten von Dokumenten sind reguläre Ausdrücke. Sie können einem dabei helfen Muster in Texten zu finden, zu erkennen und gezielt zu verändern \cite[S.1]{friedl2009regulare}. In diesem Abschnitt wird zunächst das Grundverständnis für reguläre Ausdrücke vermittelt, indem die zentralen Konzepte und die häufig verwendeten Musterkategorien wie Zeichenklassen, Quantoren, Pattern Modifiers und Wortgrenzen dargestellt und erklärt werden.
+
+Es gibt Literale Zeichen und Metazeichen, die verwendet werden, um bestimmte Muster in Texte zu finden. Sie dienen als kleine Bausteine, die man auf verschiedenster Art und Weise zusammensetzen kann, um die gewünschten Ausdrücke in den Texten zu finden. Zu den Literalzeichen gehören Buchstaben und Zahlen. Metazeichen sind Zeichen, die eine bestimmte Bedeutung besitzen. \cite[S.5]{friedl2009regulare}. Im Folgendem werden alle wichtigen Musterkategorien mit ihren Metazeichen aufgelistet.
+
+Bei den Zeichenklassen werden mehrere Zeichen oder Zeichenfolgen zusammengefasst, sodass diese als eine Einheit behandelt werden. Sie können auch festlegen, welche Zeichen an einer bestimmten Stelle zulässig sind \cite[S.9]{friedl2009regulare}. In der Tabelle \ref{tab:Meta_Zeichenklassen} werden die Metazeichen für die Gruppierung von Zeichen und ihre Bedeutung aufgelistet.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|p{8cm}|}
+\hline
+\textbf{Metazeichen} & \textbf{Beschreibung} \\ 
+\hline
+.  & irgendein Zeichen \\ 
+\hline
+(a|b)  & a oder b  \\ 
+\hline
+(...)  & Gruppe  \\ 
+\hline
+(?:...)  & Passive (nicht erfassende) Gruppe  \\ 
+\hline
+[abc]  & (a oder b oder c)  \\ 
+\hline
+[\^{}abc]  & Nicht (a oder b oder c)  \\ 
+\hline
+[a-q] & Kleinbuchstaben von a bis q  \\ 
+\hline
+[A-Q] & Großbuchstaben von A bis Q  \\ 
+\hline
+[0-7] & Ziffern von 0 bis 7  \\ 
+\hline
+\end{tabular}
+\caption{Musterkategorie: Zeichenklassen}
+\label{tab:Meta_Zeichenklassen}
 \end{table}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Quantoren sind Metazeichen, die einem dabei helfen eine bestimmte Anzahl an Wiederholungen von Textelementen zu finden \cite[S.18 ff.]{friedl2009regulare}. Alle wichtigen Metazeichen der Quantoren und ihre Bedeutung werden in der Tabelle \ref{tab:Meta_Quantoren} dargestellt.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|p{8cm}|}
+\hline
+\textbf{Metazeichen} & \textbf{Beschreibung} \\ 
+\hline
+*  & 0 oder mehr \\ 
+\hline
++  & 1 oder mehr  \\ 
+\hline
+?  & 0 oder 1  \\ 
+\hline
+\{n\}  & Genau n Wiederholungen  \\ 
+\hline
+\{n,\}  & Mindestens n Wiederholungen  \\ 
+\hline
+\{n,m\}  & Zwischen n und m Wiederholungen  \\ 
+\hline
+\end{tabular}
+\caption{Musterkategorie: Quantoren}
+\label{tab:Meta_Quantoren}
+\end{table}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Pattern Modifiers beeinflussen die Verhaltensweise des regulären Ausdrucks, zum Beispiel durch das Ignorieren von Groß- und Kleinschreibung oder das Erkennen von Zeilenumbrüchen \cite[S.47 ff.]{friedl2009regulare}. Andere Pattern Modifiers und ihre Benutzung sind in der Tabelle \ref{tab:Meta_Pattern_Modifiers} aufgelistet.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|p{8cm}|}
+\hline
+\textbf{Metazeichen} & \textbf{Beschreibung} \\ 
+\hline
+g  & Global – Muster im kompletten Text finden \\ 
+\hline
+i  & Groß- und Kleinschreibung ignorieren \\ 
+\hline
+m  & Multiline – behandelt den Text als mehrere Zeilen  \\ 
+\hline
+s  & String als einzelne Zeile behandeln  \\ 
+\hline
+x  & Kommentare und Leerzeichen in Mustern zulassen  \\ 
+\hline
+\end{tabular}
+\caption{Musterkategorie: Pattern Modifiers}
+\label{tab:Meta_Pattern_Modifiers}
+\end{table}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Eine weitere nützliche Kategorie bilden die Wortgrenzen, welche spezifische Positionen im Text definieren können, wie zum Beispiel den Anfang oder das Ende einer Zeile. Diese Positionsmarker sind hilfreich, um Muster präzise zu lokalisieren \cite[S.94]{friedl2009regulare}. Eine Sammlung von Wortgrenzen sind in der Tabelle \ref{tab:Meta_Wortgrenzen} aufgelistet.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|p{8cm}|}
+\hline
+\textbf{Metazeichen} & \textbf{Beschreibung} \\ 
+\hline
+\^{}  & die Position am Zeilenanfang \\ 
+\hline
+\$  & die Position am Zeilenende \\ 
+\hline
+\textbackslash A  & Anfang der Zeichenkette  \\ 
+\hline
+\textbackslash Z  & Ende der Zeichenkette  \\ 
+\hline
+\textbackslash b  & Wortgrenze  \\ 
+\hline
+\textbackslash B  & Nicht Wortgrenze  \\ 
+\hline
+\textbackslash <  & die Position am Wortanfang  \\ 
+\hline
+\textbackslash >  & die Position am Wortende  \\ 
+\hline
+\end{tabular}
+\caption{Musterkategorie: Wortgrenzen}
+\label{tab:Meta_Wortgrenzen}
+\end{table}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-\section{Zweiter Abschnitt von Kapitel 2}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Diese Auflistung an Metazeichen bildet eine gute Grundlage, um zum Beispiel bestimmte Muster in LaTeX-Dokumenten zu finden. Ein Beispiel dazu wäre der Ausdruck \textbf{\textbackslash chapter\{ }. Wenn wir danach suchen wollen, dann geht das mit diesem regulärem ausdruck \textbf{/(?= \textbackslash \textbackslash chapter \textbackslash \{)/g }. Um dieses Beispiel besser zu verstehen, wird dieser in Stücke aufgeteilt. Mit \textbf{(?=...)} benutzen wir den passiven Lookahead, der nach unseren Muster \textbf{\textbackslash chapter\{} sucht ohne das Muster selbst zu erfassen \cite[S.62]{friedl2009regulare}.
+Das \textbf{\textbackslash}  ist in regulären Ausdrücken als Escape-Zeichen vorhanden und stellt sicher das Zeichen wie \textbf{\textbackslash} und \textbf{\{} auch gesucht werden können. Das \textbf{/g} zum Schluss ist unser Modifikator, der dafür sorgt, dass im kompletten Textkorpus nach Treffern gesucht wird. Wäre der globale Modifikator nicht da, dann würde die Mustersuche nach dem ersten gefundenen Muster aufhören.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{Web-Design Grundlagen}
+Um die Weboberfläche von \textit{Reforge} für den Benutzer ansprechend zu gestalten, müssen die Grundlagen des Webdesigns bekannt sein. Ein Grundgedanke für jede Webseite ist, dass der Benutzer der Webseite so wenig wie möglich nachdenken muss. Das bedeutet, dass die Webseite für den Benutzer klar und verständlich gestaltet sein muss \cite{krug2018don}. Da der Benutzer Farben, Typografie und andere visuelle Elemente in der ersten Sekunde wahrnimmt und beurteilt, sollte diese klare Gestaltung bereits auf der ersten Seite der Website erfolgen. Dadurch wird sichergestellt, dass der Nutzer die Seite nicht verlässt und ein bleibender positiver Eindruck entsteht.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Wenn der Nutzer über ein Smartphone auf die Seite zugreifen möchte, muss die Seite auch an kleinere Bildschirme angepasst werden. Das Prinzip der Anpassung an verschiedene Bildschirmgrößen nennt sich Responsive Webdesign. Hierbei wird darauf geachtet, dass sich das Layout der Webseite an alle Bildschirmgrößen anpasst, so dass die Webseite auch auf Smartphones problemlos genutzt werden kann. \cite[S.51 ff]{Naumann2024}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Eine weitere Möglichkeit, die Website für den Benutzer attraktiver zu gestalten, ist die Verwendung einer visuellen Hierarchie. Mit Hilfe dieser Hierarchie kann die Aufmerksamkeit des Benutzers gezielt auf bestimmte Elemente gelenkt werden, indem beispielsweise die Größe der Typografie verändert wird. So sollten aussagekräftige Inhalte wie Überschriften größer dargestellt werden und eher unwichtige Informationen kleiner. Ein weiterer Ansatz der visuellen Hierarchie ist die Verwendung von Farben. Mit Farben können Kontraste gesetzt werden, die beispielsweise Schaltflächen von anderen Elementen abheben. Dies signalisiert dem Benutzer, dass mit dieser Schaltfläche eine Aktion möglich ist. Letztlich hilft die visuelle Hierarchie dem Benutzer, die Struktur der Website besser zu verstehen. \cite[S.54 ff.]{Naumann2024}
+ 
+Darüber hinaus sollte man bei der Wahl der Farben vorsichtig sein, da diese nicht nur einen Einfluss auf das Aussehen, sondern auch auf die Emotionen der Benutzer haben können. So vermitteln Blau und Grün Vertrauen und Freundlichkeit, während Rot und Gelb eine Dringlichkeit signalisieren. Farben sollten daher strategisch eingesetzt werden, um eine bestimmte Stimmung beim Nutzer zu erzeugen. \cite{bartel2013farben}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Schließlich sollte der Bereich einer Website, der als Weißraum bezeichnet wird, sinnvoll genutzt werden. Dieser Bereich enthält keine Elemente und dient dazu, den Inhalt einer Seite zu trennen und zu strukturieren. Sie verhindern eine Überfrachtung des Nutzers mit zu vielen Inhalten, wodurch die Website zu unübersichtlich werden könnte \cite{beaird2020principles}. Letztendlich wird gutes Webdesign daran gemessen, wie die Informationen an den Benutzer vermittelt werden. 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\section{Software-Bausteine}
+Im Folgenden werden die grundlegenden Software-Bausteine beschrieben, die in \textit{Reforge} verwendet werden.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{Typescript}
+In diesem Abschnitt wird erläutert, weshalb TypeScript als Programmiersprache für die \textit{Reforge} Anwendung ausgewählt wurde. TypeScript ist eine von Microsoft entwickelte Programmiersprache, die auf JavaScript basiert. TypeScript besitzt jedoch zusätzliche Eigenschaften, die nicht in JavaScript mit enthalten sind, wie zum Beispiel die Typisierung und die objektorientierte Programmierung. Der TypeScript-Kompiler wandelt den Code in nativen JavaScript-Code um, der von allen gängigen Browsern und JavaScript-Umgebungen ausgeführt werden kann. Diese zusätzlichen Funktionen machen TypeScript viel robuster und unterstützen den Entwickler dabei, Fehler bereits zur Entwicklungszeit zu erkennen. Dadurch wird die Zuverlässigkeit und Stabilität des Codes verbessert und der Code lässt sich langfristig besser warten und erweitern. \cite{Japikse2020}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{React}
+React ist ein Frontend Framework, welches auf JavaScript basiert. Es wurde von Facebook entwickelt und eignet sich gut für den Aufbau des \ac{UI}, insbesondere für eine \ac{SPA} \cite{lazuardy2022modern}.  Eine \ac{SPA} bezeichnet eine Webanwendung die nur aus einem \ac{HTML}-Dokument besteht und Inhalte dynamisch nachlädt \cite{fink2014introducing}.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Ein Kernkonzept von React ist der virtual \ac{DOM}. Bei diesem \ac{DOM} wird eine virtuelle Darstellung einer \ac{UI} gespeichert, die mit der echten \ac{DOM} synchronisiert wird. Dabei werden nur die Veränderungen im \ac{DOM} tree aufgenommen, weshalb die Webseite dynamisch nachlädt. Mit den React Components lassen sich \ac{UI} Elemente in kleine Stücke zerteilen. Dies erlaubt es Entwicklern eine gute Code Struktur anzulegen \cite{lazuardy2022modern}. Die React Hooks ermöglichen den Zugriff auf diese Components, wodurch die aktuellen Daten auf dem Bildschirm angepasst werden. \cite{react_website}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\subsection{API-Schnittstelle}
+
+Die Kommunikation zwischen Frontend und Backend erfolgt über eine \ac{API} Schnittstelle. Eine \ac{API} dient dazu, Dienste oder Daten einer Anwendung anderen Programmen zur Verfügung zu stellen, ohne dass ein direkter Zugriff auf den zugrundeliegenden Code erforderlich ist. Grundsätzlich kann man sich eine \ac{API} als ein verbindendes Element vorstellen, das eine Art Vertrag zwischen zwei Anwendungen darstellt. \cite[S.1]{de2017api}
+
+Eine häufig verwendete Art von Web-\ac{API} ist die RESTful \ac{API}, die das \ac{HTTP}-Protokoll verwendet, um Daten zwischen einem Client und einem Server zu übertragen. Die Daten werden als Ressourcen angelegt, die durch eine eindeutige \ac{URI} identifiziert werden. Jede Ressource repräsentiert eine bestimmte Entität, zum Beispiel \texttt{/users} für eine Liste von Benutzern oder \texttt{/users/\{id\}} für einen einzelnen Benutzer. \cite[S.29 ff.]{de2017api}
+
+Nach der Beschreibung der Ressource muss angegeben werden, was mit der Ressource gemacht werden soll. Die RESTful \ac{API} verwendet dazu vier \ac{HTTP}-Verben, die beschreiben, wie mit der Ressource umgegangen werden soll. Wenn eine neue Ressource erstellt werden soll, wird das \textbf{POST} Verb verwendet. Anschließend können die Informationen der Ressource mit dem \textbf{GET} Verb abgefragt werden. Wenn man eine bestehende Ressource aktualisieren möchte, kann man dies mit dem \textbf{PUT} Verb erledigen. Schließlich kann man die Ressource mit dem \textbf{DELETE} Verb löschen. \cite[S.37 ff.]{de2017api}
+
+Darüber hinaus müssen die gesendeten Daten sich selbst beschreiben, damit der Client versteht, wie die Anfrage zu verarbeiten ist. Diese zusätzlichen Informationen werden im Header der \ac{HTTP}-Nachricht beschrieben, wie zum Beispiel der Content-Type, der das Format der Nachricht beschreibt. \cite[S.33]{de2017api}
